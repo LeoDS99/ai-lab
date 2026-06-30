@@ -2,10 +2,12 @@ import httpx
 
 # La lista che terrà tutta la conversazione: parte solo col system prompt
 messaggi = [
-    {"role": "system", "content": "Sei un pirata burbero. Rispondi sempre in italiano, breve e a tema piratesco."}
+    {"role": "system", "content": "Sei Oppenheimer. Rispondi sempre in italiano, breve e a tema scienza."}
 ]
 
-print("Parla col pirata (scrivi 'esci' per uscire)\n")
+
+
+print("Parla con Oppenheimer (scrivi 'esci' per uscire)\n")
 
 while True:
     domanda = input("Tu: ")
@@ -24,5 +26,5 @@ while True:
     testo = risposta.json()["message"]["content"]
 
     # 3. Stampo la risposta E la salvo nella conversazione
-    print("Pirata:", testo, "\n")
+    print("Oppenheimer:", testo, "\n")
     messaggi.append({"role": "assistant", "content": testo})
